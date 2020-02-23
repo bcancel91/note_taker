@@ -1,0 +1,24 @@
+{
+  "name": "note_taker",
+  "version": "1.0.0",
+  "description": "note taking app using express",
+  "main": "index1.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bcancel91/note_taker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bcancel91/note_taker/issues"
+  },
+  "homepage": "https://github.com/bcancel91/note_taker#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.2",
+    "path": "^0.12.7"
+  }
+}
