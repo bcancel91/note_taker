@@ -56,6 +56,39 @@ fs.readFile(`${__dirname}/db/db.json`, 'utf8', (err, data) => {
     } )
   })
 })
+app.delete('/api/notes/:id', (req,res)=>{
+  const deleteID = req.params.id
+  fs.readFile(`${__dirname}/db/db.json`, 'utf8',(err, data) => {
+    if (err) {
+    //  console.error(err)
+      return
+    }
+   // console.log(data)
+   var dBData = JSON.parse(data);
+   var newDB = []
+   for(var i = 0; i < dBData.length; i++)
+   {
+     if(deleteID !== dBData[i].id){
+    newDB.push(dBData[i]);
+     }
+
+   }
+   const dataString2 = JSON.stringify(newDB)
+   fs.writeFile(`${__dirname}/db/db.json`, dataString2, (err) => 
+   {
+   if(err){
+   console.log(err);
+   }
+   return res.json(newDB);
+    } )
+   
+ 
+
+  })
+
+  
+
+});
 
 
 
